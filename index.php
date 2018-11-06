@@ -1,11 +1,27 @@
  <?php
  error_reporting(E_ALL);
-    $name = 'Mike';
-    $Surname = 'Smith';
-    $age = 60;
-    $canSwim = false;
-    $weight = 75.5;
-    ?>
+    //array
+
+   $employees1 = [
+       'age'=> 61,
+       'weight' => 75.35,
+       'name' => 'Mike',
+       'surname' => 'Smith',
+       'can_swim' => false
+       ];
+
+
+    $employees2 = [
+       'age'=> 34,
+       'weight' => 70.35,
+       'name' => 'Steve',
+       'surname' => 'Anderson',
+       'can_swim' => true
+       ];
+
+    $employees = [$employees1 , $employees2];
+
+?>
 
 
 <!DOCTYPE html>
@@ -25,13 +41,23 @@
             <th>Surname</th>
             <th>Age</th>
             <th>Weight</th>
+            <th>Cam swim</th>
         </tr>
         <tr>
-            <td><?=$name ?></td>
-            <td><?=$Surname ?></td>
-            <td><?=$age ?></td>
-            <td><?=$weight ?></td>
+            <td><?=$employees[0] ['name'] ?></td>
+            <td><?=$employees[0] ['surname']?></td>
+            <td><?=$employees[0] ['age']?></td>
+            <td><?=$employees[0] ['weight'] ?></td>
+            <td><?=$employees[0] ['can_swim'] ?></td>
 
+        </tr>
+
+        <tr>
+            <td><?=$employees[1] ['name'] ?></td>
+            <td><?=$employees[1] ['surname']?></td>
+            <td><?=$employees[1] ['age']?></td>
+            <td><?=$employees[1] ['weight'] ?></td>
+            <td><?=$employees[1] ['can_swim'] ?></td>
         </tr>
 
     </table>
@@ -41,7 +67,7 @@
     <?php
 
 
-        var_dump(-$age > 20);
+
 
     ?>
 
