@@ -19,7 +19,25 @@
        'can_swim' => true
        ];
 
-    $employees = [$employees1 , $employees2];
+    $employees3 = [
+       'age'=> 43,
+       'weight' => 112.35,
+       'name' => 'Hank',
+       'surname' => 'Jobs',
+       'can_swim' => true
+       ];
+
+
+    $employees = [$employees1 , $employees2, $employees3];
+
+    foreach ($employees as $k => $e) {
+
+
+
+      }
+
+
+
 
 ?>
 
@@ -41,25 +59,18 @@
             <th>Surname</th>
             <th>Age</th>
             <th>Weight</th>
-            <th>Cam swim</th>
+            <th>Can swim</th>
         </tr>
+        <?php
+        foreach($employees as $employee) : ?>
         <tr>
-            <td><?=$employees[0] ['name'] ?></td>
-            <td><?=$employees[0] ['surname']?></td>
-            <td><?=$employees[0] ['age']?></td>
-            <td><?=$employees[0] ['weight'] ?></td>
-            <td><?=$employees[0] ['can_swim'] ?></td>
-
+            <td><?=$employee ['name'] ?></td>
+            <td><?=$employee ['surname']?></td>
+            <td><?=$employee ['age']?></td>
+            <td><?=$employee ['weight'] ?></td>
+            <td><?=$employee ['can_swim'] ? 'Yes': 'No'?></td>
         </tr>
-
-        <tr>
-            <td><?=$employees[1] ['name'] ?></td>
-            <td><?=$employees[1] ['surname']?></td>
-            <td><?=$employees[1] ['age']?></td>
-            <td><?=$employees[1] ['weight'] ?></td>
-            <td><?=$employees[1] ['can_swim'] ?></td>
-        </tr>
-
+           <?php endforeach; ?>
     </table>
 
     <hr>
