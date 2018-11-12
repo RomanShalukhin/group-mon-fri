@@ -74,6 +74,18 @@
         </tr>
            <?php endforeach; ?>
     </table>
+    <h1>Form</h1>
+    
+    <form method='post'>
+        <input type="text" name="username"/>
+        <input type="email" name="email"/>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+    <?php if($_POST) : ?>
+        <h1>Form data: </h1>
+        <?php var_dump($_POST) ?>
+    <?php endif ?>
 
 </body>
 </html>
