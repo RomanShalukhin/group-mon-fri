@@ -8,12 +8,16 @@
 </head>
 <body>
     <form method='post'>
-        <input type="number" name="number" min="2" required/>
+        <input type="number" name="number" min="2" />
         <button>Go</button>
     </form>
     
     <?php 
         if($_POST) {
+            
+            if (!is_numeric($_POST['number'])) {
+                die('not a number');
+            }
             
             $number = (int)$_POST['number'];
             $result = true;
