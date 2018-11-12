@@ -28,13 +28,8 @@
        ];
 
 
-    $employees = [$employees1 , $employees2, $employees3];
+    $employees = [$employees1 , $employees2, $employees3, $employees1 , $employees2, $employees3];
 
-    foreach ($employees as $k => $e) {
-
-
-
-      }
 
 
 
@@ -49,12 +44,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Document</title>
+    <style type="text/css">
+        .grey td{
+            background: #aaaaaa;
+        }
+    </style>
 </head>
 <body>
 
 
-    <table border="1">
+    <table border="1" cellspacing="0" cellpadding="5">
         <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Surname</th>
             <th>Age</th>
@@ -62,8 +63,9 @@
             <th>Can swim</th>
         </tr>
         <?php
-        foreach($employees as $employee) : ?>
-        <tr>
+        foreach($employees as $key => $employee) : ?>
+        <tr <?=$key%2 ? "class='grey'" : null?>>
+            <td><?=$key?></td>
             <td><?=$employee ['name'] ?></td>
             <td><?=$employee ['surname']?></td>
             <td><?=$employee ['age']?></td>
@@ -72,20 +74,6 @@
         </tr>
            <?php endforeach; ?>
     </table>
-
-    <hr>
-
-    <?php
-
-
-
-
-    ?>
-
-
-
-
-
 
 </body>
 </html>
